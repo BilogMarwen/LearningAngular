@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { post } from 'selenium-webdriver/http';
+import {UrlServiceService} from '../url-service.service';
+
 
 @Component({
   selector: 'app-subscribe',
@@ -15,7 +17,7 @@ export class SubscribeComponent implements OnInit {
   name: string='';
   titleAlert='nom invalide';
   
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder, private urls:UrlServiceService) { 
    this.rForm = fb.group({
    'name':[null,Validators.required],
    'description':[null,Validators.compose([Validators.required, Validators.minLength(30)])],

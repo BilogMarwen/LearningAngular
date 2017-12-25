@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { LoginComponent } from './login/login.component';
+import {UrlServiceService} from './url-service.service';
 // import { CreateCountryComponent } from './create-country/create-country.component';
 
 const appRoutes : Routes=[
@@ -61,7 +62,7 @@ const appRoutes : Routes=[
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [UrlServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
