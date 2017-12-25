@@ -1,0 +1,30 @@
+<article>
+<br>
+  <div class="row border border-info col-8 mb-2"  *ngFor="let country of result" >
+    
+    <div class="col-2">    
+      <figure>
+        <img class="flag rounded-circle" src={{country.flag}}/>
+        <figcaption class="text-center"><strong>{{country.name}}</strong></figcaption>
+      </figure>
+    </div>
+    
+    <div class="col-4">     
+      <label><strong>Population :</strong></label>      
+      <label>{{country.population}}</label><br>
+
+      <label><strong>Capital :</strong></label>      
+      <label>{{country.capital}}</label><br>
+
+      <label><strong>Code :</strong></label>      
+      <label>{{country.numericCode}}</label><br>
+    </div>
+
+    <div class="col-3">
+      <a routerLink="/subscribe">Plus de details</a>
+    </div>
+
+  
+ </div> 
+
+</article>

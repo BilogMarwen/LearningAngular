@@ -1,0 +1,24 @@
+<div  *ngIf="!UserName"> 
+    
+    <form [formGroup]="LoginForm" (ngSubmit)="addPost(LoginForm.value)">
+      <div class="form-container">
+          <h1>Login</h1>
+        <div class="row">
+          <label>Nom d'utilisateur
+            <input type="text"  formControlName="UserName">
+            <div class="alert" *ngIf="!LoginForm.controls['UserName'].valid && rForm.controls['UserName'].touched">{{ LoginForm }}</div>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Mot de passe
+            <input type="password"  formControlName="Password">
+            <div class="alert" *ngIf="!LoginForm.controls['Password'].valid && LoginForm.controls['Password'].touched">{{ LoginForm }}</div>
+          </label>
+        </div>
+          
+          <input type="submit" class="button " value="Submit Form" [disabled]="!LoginForm.valid">
+        
+      </div>
+    </form>
+  </div>
