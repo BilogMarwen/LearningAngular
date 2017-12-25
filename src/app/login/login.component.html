@@ -1,12 +1,12 @@
-<div  *ngIf="!UserName"> 
+<div  *ngIf="!email; else forminfo"> 
     
     <form [formGroup]="LoginForm" (ngSubmit)="addPost(LoginForm.value)">
       <div class="form-container">
           <h1>Login</h1>
         <div class="row">
           <label>Nom d'utilisateur
-            <input type="text"  formControlName="UserName">
-            <div class="alert" *ngIf="!LoginForm.controls['UserName'].valid && rForm.controls['UserName'].touched">{{ LoginForm }}</div>
+            <input type="text"  formControlName="email">
+            <div class="alert" *ngIf="!LoginForm.controls['email'].valid && LoginForm.controls['email'].touched">{{ LoginForm }}</div>
           </label>
         </div>
 

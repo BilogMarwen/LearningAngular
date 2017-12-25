@@ -12,19 +12,20 @@ export class LoginComponent implements OnInit {
   post:any;                     
   
   Password:string = '';
-  UserName:string = '';
+  email:string = '';
   validationMessage='Valeur non valide';
 
   constructor( private LoginFormGroup: FormBuilder) {
     
     this.LoginForm = LoginFormGroup.group({
-      'UserName' : [null, Validators.compose([Validators.required, Validators.email ])],
+      'email' : [null, Validators.compose([Validators.required, Validators.email ])],
       'Password' : [null, Validators.minLength(7)]
     });
    }
 
    addPost(post) {
-    this.UserName = post.UserName;
+     debugger
+    this.email = post.email;
     this.Password = post.Password;
   }
 
