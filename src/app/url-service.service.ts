@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class UrlServiceService {
 
   private CountriesURL = "https://restcountries.eu/rest/v2/all";
-  private PostCountrie = "";
+  private PostUrl = "http://del.icio.us/api/peej/bookmarks/";
 
 
   constructor() { }
@@ -13,4 +13,7 @@ export class UrlServiceService {
     return this.CountriesURL;
   }
 
+  GetPostUrl(){
+    return this.PostUrl;
+  }
 }

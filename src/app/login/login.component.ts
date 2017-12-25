@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { HttpClient } from "@angular/common/http";
+import {UrlServiceService} from '../url-service.service';
 
 @Component({
   selector: 'app-login',
@@ -14,22 +16,34 @@ export class LoginComponent implements OnInit {
   Password:string = '';
   email:string = '';
   validationMessage='Valeur non valide';
+  postresult: any;
 
-  constructor( private LoginFormGroup: FormBuilder) {
+
+  constructor( private LoginFormGroup: FormBuilder, private httpclient: HttpClient,
+  private urls: UrlServiceService) {
     
     this.LoginForm = LoginFormGroup.group({
-      'email' : [null, Validators.compose([Validators.required, Validators.email ])],
-      'Password' : [null, Validators.minLength(7)]
+      'example' : [null, Validators.compose([Validators.required, Validators.email ])],
+      'test' : [null, Validators.compose([Validators.required, Validators.minLength(7) ])]
     });
    }
 
    addPost(post) {
      debugger
+
+     this.httpclient.post(this.urls.GetPostUrl(),this)
+     .subscribe(
+       Response=>this.postresult=Response
+     );
+
     this.email = post.email;
     this.Password = post.Password;
   }
 
   ngOnInit() {
+
+    
+
   }
 
 }
