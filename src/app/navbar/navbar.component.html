@@ -1,7 +1,7 @@
 
 <ul class="nav flex-column">
   
-   <li class="nav-item" *ngFor="let NavBarElement of NavBarElements">
-         <a  class="nav-link active" routerLinkActive="active-link" [routerLink]="NavBarElement.AncorUrl">{{NavBarElement.AncorName}}</a> 
+   <li class="nav-item" *ngFor="let NavBarElement of NavBarElements"  [routerLinkActive]="['active']">
+         <a  class="nav-link"  [routerLink]="NavBarElement.AncorUrl">{{NavBarElement.AncorName}}</a> 
     </li>
 </ul>
