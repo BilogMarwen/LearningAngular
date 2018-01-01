@@ -35,11 +35,7 @@ export class DashbordComponent implements OnInit {
       .get(this.urls.getAllcuntriesUrl())
       .subscribe(
       response => this.result = response
-
       );
-
-
-
   }
 
 
