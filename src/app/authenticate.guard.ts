@@ -13,8 +13,8 @@ export class AuthenticateGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      window.alert('AuthenticatedGuard is called');
-      this.rout.navigate(['/home'])
-    return false;
+     
+      //this.rout.navigate(['/home']);
+    return true;
   }
 }

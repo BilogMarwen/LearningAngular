@@ -14,6 +14,7 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
 import { LoginComponent } from './login/login.component';
 import {UrlServiceService} from './url-service.service';
 import { AuthenticateGuard } from './authenticate.guard';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 // import { CreateCountryComponent } from './create-country/create-country.component';
 
 const appRoutes : Routes=[
@@ -36,6 +37,10 @@ const appRoutes : Routes=[
   },{
     path:'login',
     component:LoginComponent
+  },{
+    path:'ComponentDetail/:code',
+    component:CountryDetailComponent,
+    canActivate:[AuthenticateGuard]
   }
   ,{
     path:'**',
@@ -53,6 +58,7 @@ const appRoutes : Routes=[
     ContactComponent,
     SubscribeComponent,
     LoginComponent,
+    CountryDetailComponent,
 ],
   imports: [
       RouterModule.forRoot(
